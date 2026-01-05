@@ -1,3 +1,5 @@
+/* app/globals.css */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -119,4 +121,58 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Soft Gradient Background */
+.bg-gradient {
+  background: linear-gradient(
+    135deg,
+    oklch(0.985 0 0 / 0.8) 0%,
+    oklch(0.97 0 0 / 0.6) 50%,
+    oklch(0.985 0 0 / 0.8) 100%
+  );
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle Pulse Animation */
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shine {
+  animation: shine 3s infinite linear;
 }
