@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail, ExternalLink, Menu, X } from "lucide-react";
+import { LinkPreview } from "@/components/ui/link-preview";
 
 // --- Aceternity UI Components (Inlined) ---
 function GridPattern({ className }: { className?: string }) {
@@ -172,9 +173,9 @@ export default function Hero() {
                 transition={{ delay: 0.5 }}
                 className="flex gap-6 mt-8"
               >
-                <Github className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
-                <Linkedin className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
-                <Mail className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
+                <Github  href="https://github.com/Yokeshbbca" className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
+                <Linkedin href="www.linkedin.com/in/yokesh-b-ab94a826b" className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
+                <Mail onClick={() => scrollToSection("contact")} className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" />
               </motion.div>
             </div>
           </motion.div>
@@ -244,13 +245,39 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button className="h-12 px-8 rounded-full bg-white text-black hover:bg-gray-200 font-semibold text-md shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.5)] transition-all" onClick={() => scrollToSection("projects")}>
-              View Projects <ArrowRight className="ml-2 h-4 w-4" />
+            <Button
+              className="group h-12 px-8 rounded-full bg-white text-black hover:bg-gray-200 font-semibold text-md
+                        shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)]
+                        hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.5)]
+                        transition-all flex items-center"
+              onClick={() => scrollToSection('projects')}
+            >
+              View Projects
+              <ArrowRight
+                className="h-4 w-4 transition-transform duration-300  ease-in-out
+                          group-hover:translate-x-1 group-hover:translate-y-1 group-hover:rotate-45"
+              />
             </Button>
-            <Button variant="outline" className="h-12 px-8 rounded-full border-white/10 bg-transparent text-white hover:text-white hover:bg-white/5 hover:border-white/20 backdrop-blur-sm transition-all" onClick={() => scrollToSection("contact")}>
-              <Mail className="mr-2 h-4 w-4" />
-              Contact Me
-            </Button>
+
+            <LinkPreview
+              url="https://yb-dev.vercel.app/#contact" // or portfolio / calendly / contact page
+              className="inline-block"
+            >
+              <Button
+                variant="outline"
+                className="h-12 px-8 rounded-full border-white/10 bg-transparent text-white
+                          hover:text-white hover:bg-white/5 hover:border-white/20
+                          backdrop-blur-sm transition-all flex items-center"
+                onClick={(e) => {
+                  e.preventDefault();      
+                  e.stopPropagation();   
+                  scrollToSection("contact")}
+                }
+              >
+                <Mail className="mr-2 h-4 w-4" />
+                Contact Me
+              </Button>
+            </LinkPreview>
           </motion.div>
         </div>
       </main>

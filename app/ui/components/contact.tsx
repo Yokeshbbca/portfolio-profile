@@ -68,7 +68,7 @@ const contactInfo = [
 const socials = [
   { icon: Github, label: "Github", link: "https://github.com/Yokeshbbca" },
   { icon: Linkedin, label: "LinkedIn", link: "www.linkedin.com/in/yokesh-b-ab94a826b" },
-  { icon: Globe, label: "Portfolio", link: "#" },
+  { icon: Globe, label: "My CV", link: "https://drive.google.com/file/d/1mXIF8H5RhzwxFMq40KkctVwGXO4Oi0wK/view?usp=drivesdk" },
 ];
 
 export default function Contact() {
@@ -137,7 +137,7 @@ export default function Contact() {
               <p className="text-neutral-400 mb-6 text-sm">
                 Let's discuss how we can scale your product.
               </p>
-              <button className="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all active:scale-95 flex items-center justify-center gap-2"
+              <button className="w-full py-3 px-6 rounded-lg bg-gradient-to-r cursor-pointer from-indigo-600 to-purple-600 text-white font-medium hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all active:scale-95 flex items-center justify-center gap-2"
                 onClick={() => window.location.href = "mailto:yokeshbbca@gmail.com"}
               >
                 Send Message <ArrowRight className="w-4 h-4" />
@@ -150,6 +150,7 @@ export default function Contact() {
                 <motion.a
                   key={i}
                   href={s.link}
+                  target="_blank"
                   whileHover={{ y: -5, borderColor: "rgba(139, 92, 246, 0.5)" }}
                   className="glass p-4 rounded-xl border border-white/10 bg-white/5 flex flex-col items-center justify-center gap-2 hover:bg-white/10 transition-all"
                 >

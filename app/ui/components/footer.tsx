@@ -102,7 +102,7 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-2">Let's build something.</h3>
               <p className="text-neutral-500 text-sm mb-4">Open for new opportunities.</p>
               <Link 
-                href="mailto:hello@yb.dev" 
+                href="mailto:yokeshbbca@gmail.com" 
                 className="inline-flex items-center gap-2 text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors"
               >
                 yokeshbbca@gmail.com <ArrowUpRight className="w-4 h-4" />

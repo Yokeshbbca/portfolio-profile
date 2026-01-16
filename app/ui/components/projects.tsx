@@ -40,6 +40,7 @@ function BackgroundBeams({ className }: { className?: string }) {
 // --- Data ---
 const projects = [
   {
+    id: "0",
     title: "Ekdant Enviro",
     description: "A multi-role laboratory management system designed for seamless sample collection, testing, and reporting. Implements role-based workflows using AWS Cognito for Front-Office, Distributor, Lab Tech, and Admin users.",
     tech: ["Next.js", "ShadcnUI", "AWS Cognito", "DynamoDB", "AWS Lambda", "S3", "AWS AppSync", "GraphQL"],
@@ -49,6 +50,7 @@ const projects = [
     bg: "bg-indigo-500/10",
   },
   {
+    id: "1",
     title: "Bluestone",
     description: "A role-based quarry operations management system that streamlines by-product and product tracking, employee management, attendance, and leave workflows. Built using Next.js (Pages Router) with AWS Amplify Gen 2 and deployed via Git CodeCommit.",
     tech: ["Next.js", "AWS Amplify Gen 2", "Git CodeCommit", "DynamoDB", "AWS Lambda", "GraphQL", "Tailwind CSS"],
@@ -58,6 +60,7 @@ const projects = [
     bg: "bg-blue-500/10",
   },
   {
+    id: "2",
     title: "HRMS (Human Resource Management System)",
     description: "A multi-tenant HR SaaS platform with role-based access control, allowing organizations to onboard employees, manage leaves, shifts, and learning programs. Built using Next.js (App Router) with AWS Amplify Gen 2 and deployed via Git CodeCommit.",
     tech: ["Next.js", "Mantine", "AWS Amplify Gen 2", "Git CodeCommit", "DynamoDB", "AWS Lambda", "GraphQL", "Tailwind CSS"],
@@ -67,6 +70,7 @@ const projects = [
     bg: "bg-purple-500/10",
   },
   {
+    id: "3",
     title: "Corporate Website Development",
     description: "Developed a responsive corporate website for a client using WordPress with Elementor. Implemented a custom PHP backend for dynamic content management, forms, and integrations.",
     tech: ["WordPress", "Elementor", "PHP", "YoastSEO", "Responsive Design"],
@@ -76,6 +80,7 @@ const projects = [
     bg: "bg-cyan-500/10",
   },
   {
+    id: "4",
     title: "Upstox Strategy App",
     description: "A stock trading strategy platform that enables users to execute and track trades based on client-defined strategies, including CALL/PUT options. Built with Next.js and deployed via Git for seamless version control.",
     tech: ["Next.js", "React", "REST APIs", "Git", "Python", "AWS AppSync", "Tailwind CSS"],
@@ -85,6 +90,7 @@ const projects = [
     bg: "bg-green-500/10",
   },
   {
+    id: "5",
     title: "Flipkart Demo App",
     description: "A frontend-only demo application replicating Flipkart’s interface and basic interactions. Built using HTML, CSS, and JavaScript with responsive design, demonstrating UI/UX skills without a backend.",
     tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
@@ -197,7 +203,7 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
                 <project.icon className={cn("w-6 h-6", project.color)} />
               </div>
               <a 
-                href={project.link} 
+                href={`/projects/${project.id}`} 
                 className="text-neutral-500 hover:text-white transition-colors"
               >
                 <ExternalLink className="w-5 h-5" />
